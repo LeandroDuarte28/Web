@@ -2,22 +2,17 @@ package main
 
 import (
 	"net/http"
-	"text/template"
 
-	"main.go/db"
-	"main.go/models"
+	"main.go/routes"
+	//"text/template"
+	//"main.go/db"
+	//"main.go/models"
 )
 
-var temp = template.Must(template.ParseGlob("templates/*.html"))
-
-func index(w http.ResponseWriter, r *http.Request) {
-	todosOsProdutos := models.BuscaTodosOsProdutos()
-	temp.ExecuteTemplate(w, "Index", todosOsProdutos)
-}
-
 func main() {
-	db := db.ConectaComBancoDeDados()
-	defer db.Close()
-	http.HandleFunc("/", index)
+	//db := db.ConectaComBancoDeDados()
+	//defer db.Close()
+	//http.HandleFunc("/", index)
+	routes.CarregaRotas()
 	http.ListenAndServe(":8000", nil)
 }
