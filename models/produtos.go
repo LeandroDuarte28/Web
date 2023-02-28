@@ -2,6 +2,7 @@ package models
 
 import (
 	"main.go/db"
+	//"database/sql"
 )
 
 type Produto struct {
@@ -13,6 +14,7 @@ type Produto struct {
 }
 
 func BuscaTodosOsProdutos() []Produto {
+
 	db := db.ConectaComBancoDeDados()
 
 	selectDeTodosOsProdutos, err := db.Query("select * from produtos")

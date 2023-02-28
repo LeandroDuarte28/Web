@@ -2,6 +2,8 @@ package db
 
 import (
 	"database/sql"
+
+	_ "github.com/lib/pq" // importa o driver PostgreSQL
 )
 
 func ConectaComBancoDeDados() *sql.DB {

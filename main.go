@@ -14,5 +14,5 @@ func main() {
 	//defer db.Close()
 	//http.HandleFunc("/", index)
 	routes.CarregaRotas()
-	http.ListenAndServe(":8000", nil)
+	http.ListenAndServe(":8500", nil)
 }
